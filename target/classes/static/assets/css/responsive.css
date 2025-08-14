@@ -1,0 +1,1539 @@
+@media only screen and (max-width: 767px) {
+  /* Reset CSS */
+  body {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 35px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  h3, .h3 {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  .ptb-50 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .ptb-100 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .pt-100 {
+    padding-top: 50px;
+  }
+  .pb-100 {
+    padding-bottom: 50px;
+  }
+  .ptb-70 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .pt-70 {
+    padding-top: 20px;
+  }
+  .pb-70 {
+    padding-bottom: 20px;
+  }
+  .no-wrap {
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+  }
+  p {
+    font-size: 14px;
+  }
+  .primary-btn {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+  .btn-text {
+    font-size: 14px;
+  }
+  /* Section Title CSS */
+  .section-title {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+  .section-title h2 {
+    font-size: 30px;
+    padding-bottom: 15px;
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+  .section-title h2 span {
+    width: 60px;
+  }
+  .section-title p {
+    max-width: 440px;
+    font-size: 14px;
+  }
+  .section-title.style-two p {
+    margin-top: 10px;
+  }
+  /* -----------------------------------------
+	Banner CSS
+	----------------------------------------- */
+  .home-banner-area .banner-content {
+    text-align: center;
+    margin: auto;
+    max-width: 512px;
+    padding: 60px 0 110px;
+  }
+  .home-banner-area .banner-content .title {
+    font-size: 32px;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  .home-banner-area .banner-content .text {
+    max-width: 440px;
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+  .home-banner-area .slider-item::after {
+    background: rgba(10, 10, 10, 0.7);
+  }
+  .home-banner-area.banner-style-two .banner-content {
+    padding: 70px 0;
+  }
+  .home-banner-area.banner-style-two .banner-content .title {
+    padding-bottom: 0;
+  }
+  .home-banner-area.banner-style-two .banner-content .text {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  .home-banner-area.banner-style-three .banner-content {
+    padding: 60px 0 100px;
+  }
+  .home-banner-area.banner-style-three .banner-content .title {
+    padding-bottom: 0;
+  }
+  .home-banner-area.banner-style-three .slider-item::after {
+    background: rgba(255, 255, 255, 0.7);
+  }
+  .home-banner-area.banner-style-three .owl-carousel .owl-nav button[class*=owl-] {
+    top: 30%;
+  }
+  /* -----------------------------------------
+	About CSS
+	----------------------------------------- */
+  .about-section::before {
+    height: 25%;
+  }
+  .about-section .bg-shape img {
+    height: 35%;
+  }
+  .about-section .content .title {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  .about-section .content .title span {
+    bottom: -2px;
+  }
+  .about-section .content .text {
+    margin-bottom: 20px;
+  }
+  .about-section .content .content-list {
+    margin-bottom: 25px;
+  }
+  .about-section.style-two .image .overlay-image {
+    left: -7px;
+    bottom: 25px;
+    max-width: 130px;
+  }
+  .about-section.style-two .content .title {
+    margin-bottom: 15px;
+  }
+  .about-section.style-two .content .text {
+    margin-bottom: 20px;
+  }
+  .blockquote {
+    font-size: 16px !important;
+  }
+  /* -----------------------------------------
+	About Single CSS
+	----------------------------------------- */
+  .about-single-area .about-section .content .blockquote {
+    margin-bottom: 15px;
+  }
+  .about-single-area .service-section-four .card .text {
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* -----------------------------------------
+	Gallery CSS
+	----------------------------------------- */
+  .gallery-section .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .gallery-section .card .image {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+  .gallery-section .card .image img {
+    width: 100%;
+  }
+  .gallery-section .card .content {
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+  .gallery-section .card .content .title {
+    margin-bottom: 5px;
+  }
+  .gallery-section .card .content .text {
+    max-width: 420px;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  .gallery-section .card .content .price {
+    display: block;
+    line-height: 1;
+  }
+  .gallery-section-three .image {
+    height: 290px;
+  }
+  .gallery-section-three .image img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .promo-contact-section.style-three .p-0 {
+    padding: 0 15px !important;
+  }
+  .promo-contact-section.style-three .card {
+    margin-bottom: 30px;
+  }
+  .owl-carousel .owl-nav button[class*=owl-] {
+    width: 30px;
+    height: 30px;
+  }
+  /* -----------------------------------------
+	Promo Service CSS
+	----------------------------------------- */
+  .promo-service-section .card {
+    padding: 20px 20px 20px 30px;
+  }
+  .promo-service-section-two .image img {
+    display: block;
+  }
+  .promo-service-section-two .pr-100 {
+    padding-right: 0;
+    padding: 20px 15px !important;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
+  .promo-service-section-two .card {
+    padding: 20px 20px 20px 30px;
+  }
+  /* -----------------------------------------
+	Service CSS
+	----------------------------------------- */
+  .service-section {
+    margin-top: 0;
+  }
+  .service-section .card {
+    overflow: hidden;
+  }
+  .service-section .card .image {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .service-section .card .content .text {
+    max-width: 420px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .service-section-two .content {
+    padding: 20px 15px;
+  }
+  .service-section-two .content .title {
+    margin-bottom: 10px;
+  }
+  .service-section-two .content .text {
+    margin-bottom: 15px;
+  }
+  .service-section-three .content {
+    padding: 20px 15px;
+  }
+  .service-section-three .content .title {
+    margin-bottom: 10px;
+  }
+  .service-section-three .content .text {
+    margin-bottom: 15px;
+  }
+  .service-section-three .content .sub-title {
+    margin-bottom: 10px;
+  }
+  /* -----------------------------------------
+	Newsletter CSS
+	----------------------------------------- */
+  .newsletter-section::before {
+    top: unset;
+    bottom: 0;
+    height: 20%;
+  }
+  .newsletter-section .content h2 {
+    padding-bottom: 14px;
+    margin-bottom: 15px;
+  }
+  .newsletter-section .content p {
+    margin-bottom: 20px;
+  }
+  .newsletter-section.style-two .image {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .newsletter-section.style-two::before {
+    top: 0;
+    bottom: unset;
+    height: 43%;
+  }
+  /* -----------------------------------------
+	Blog CSS
+	----------------------------------------- */
+  .blog-section .blog-slider .slider-item .card {
+    padding: 20px;
+  }
+  .blog-section-two .card .content .time {
+    margin-bottom: 10px;
+  }
+  .blog-section-two .card .content .title {
+    margin-bottom: 10px;
+  }
+  .blog-section-two .card .content .info-list {
+    margin-bottom: 15px;
+  }
+  /* -----------------------------------------
+	Testimonial CSS
+	----------------------------------------- */
+  .testimonial-section .container-inner .image {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+  .testimonial-section .container-inner .image .shape {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    height: 100%;
+  }
+  .testimonial-section .container-inner .content {
+    padding: 0 15px;
+    text-align: center;
+  }
+  .testimonial-section .container-inner .content .quote {
+    width: 130px;
+    height: 90px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .testimonial-section .container-inner .content .title span {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .testimonial-section .container-inner .testimonial-slider {
+    padding: 0 15px 20px;
+    text-align: center;
+  }
+  .testimonial-section-two .content .title {
+    margin-top: -4px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .testimonial-section-two .testimonial-slider {
+    padding: 0;
+    text-align: center;
+  }
+  .testimonial-section-two .slider-item .text {
+    font-size: 17px;
+  }
+  .testimonial-section-two .image .quote {
+    padding: 20px;
+    left: 2px;
+  }
+  .testimonial-section-three .owl-carousel .owl-nav button[class*=owl-] {
+    top: 10%;
+  }
+  .testimonial-section-three #owl-custom-dots {
+    padding-top: 35px;
+  }
+  .testimonial-section-three #owl-custom-dots .owl-dot img {
+    max-width: 70px;
+  }
+  .wish-section .image {
+    border-top: 1px solid #a2a2a2;
+  }
+  /* -----------------------------------------
+	Footer CSS
+	----------------------------------------- */
+  .footer-area .footer-top {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+  .footer-area .footer-widget {
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  .footer-area h3 {
+    margin-bottom: 15px;
+  }
+  .footer-area .border-right {
+    border-color: transparent !important;
+  }
+  .footer-area .copy-right-area a {
+    display: block;
+    margin-top: 5px;
+  }
+  .footer-area.style-two::before, .footer-area.style-three::before {
+    content: none;
+  }
+  .footer-area.style-two .border-right, .footer-area.style-three .border-right {
+    border-color: transparent !important;
+  }
+  .footer-area.style-two .container::after, .footer-area.style-three .container::after {
+    content: none;
+  }
+  .footer-area.style-two .copy-right-area::after, .footer-area.style-three .copy-right-area::after {
+    right: 0;
+    width: 100%;
+  }
+  .go-top {
+    bottom: 1%;
+    padding: 4px 9px;
+  }
+  .go-top i {
+    vertical-align: -1px;
+  }
+  /* -----------------------------------------
+	Custom Tabs CSS
+	----------------------------------------- */
+  .nav-tabs-navigation {
+    margin-bottom: 30px;
+  }
+  .nav-tabs-navigation .nav .nav-link {
+    margin: 0 5px;
+    font-size: 13px;
+  }
+  /* -----------------------------------------
+	Page Title CSS
+	----------------------------------------- */
+  .page-title-area {
+    padding: 60px 0;
+  }
+  .page-title-area::before {
+    background: linear-gradient(321deg, rgba(255, 255, 255, 0.766214) 0%, #e0e1e3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#e0e1e3",GradientType=1);
+  }
+  .page-title-area .page-title-content h1 {
+    margin-top: -3px;
+    margin-bottom: 5px;
+  }
+  .page-title-area .page-title-content ul li {
+    font-weight: 500;
+  }
+  .pagination {
+    margin-top: 20px;
+  }
+  /* -----------------------------------------
+	Blog Details CSS
+	----------------------------------------- */
+  .blog-details-area .blog-details-desc .card .content {
+    padding: 20px 15px;
+  }
+  .blog-details-area .blog-details-desc .card .content .info-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  .blog-details-area .blog-details-desc .card .content .info-list li {
+    margin-right: 20px;
+  }
+  .blog-details-area .blog-details-desc .card .content .share-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  .blog-details-area .blog-details-desc .card .content .comments-area .comment-body .comment-author {
+    padding-right: 10px;
+  }
+  .blog-details-area .blog-details-desc .card .content .comments-area .comment-body .comment-content {
+    margin-top: -2px;
+  }
+  .blog-details-area .blog-details-desc .card .content .comment-reply {
+    padding: 15px;
+  }
+  /* -----------------------------------------
+	Error CSS
+	----------------------------------------- */
+  .error-area .error-content .error-text {
+    width: 150px;
+    height: 150px;
+  }
+  .error-area .error-content .error-text h1 {
+    font-size: 50px;
+  }
+  .error-area .error-content h3 {
+    font-size: 30px;
+  }
+  .error-area .error-content p {
+    max-width: 445px;
+  }
+  /* -----------------------------------------
+	Coming Soon CSS
+	----------------------------------------- */
+  .coming-soon-section .coming-soon-box #timer .count {
+    height: 100px;
+    width: 100px;
+  }
+  .coming-soon-section .coming-soon-box #timer .count .h1 {
+    font-size: 35px;
+  }
+  /* -----------------------------------------
+	Authentication CSS
+	----------------------------------------- */
+  .authentication-section .checkbox label {
+    font-size: 12px;
+  }
+  .authentication-section .link a {
+    font-size: 12px;
+  }
+  .authentication-section .form-group label {
+    margin-bottom: 14px;
+  }
+  /* -----------------------------------------
+	Privacy & Terms CSS
+	----------------------------------------- */
+  /* -----------------------------------------
+	Shop CSS
+	----------------------------------------- */
+  .shop-section .toolbox {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .shop-section .toolbox .toolbox-left {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .shop-section .toolbox .toolbox-right {
+    max-width: 100%;
+    width: 100%;
+  }
+  /* -----------------------------------------
+	Cart CSS
+	----------------------------------------- */
+  .cart-section .cart-table {
+    padding: 0 20px 10px;
+  }
+  .cart-section .cart-table tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 15px;
+  }
+  .cart-section .cart-table tr td {
+    padding: 0;
+    padding-bottom: 15px;
+  }
+  .cart-section .cart-table .product-info {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cart-section .cart-table .product-info .image {
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+  .cart-section .cart-table .price {
+    padding: 0;
+  }
+  .cart-section .cart-table .cancel-btn {
+    display: block;
+  }
+  .cart-section .cart-table .btn-actions {
+    text-align: center;
+  }
+  .cart-section .cart-table .btn-actions .primary-btn {
+    margin-bottom: 10px;
+  }
+  /* -----------------------------------------
+	Checkout CSS
+	----------------------------------------- */
+  .checkout-section .checkout-form .card .label .input {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40%;
+            flex: 0 0 40%;
+    max-width: 40%;
+  }
+  .checkout-section .checkout-form .card .label .image {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 60%;
+            flex: 0 0 60%;
+    max-width: 60%;
+  }
+  .checkout-section .checkout-form .card .label .image img {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 30%;
+            flex: 0 0 30%;
+    max-width: 30%;
+  }
+  .order-summary {
+    padding: 20px 15px;
+  }
+  .order-summary .product-list li h5 {
+    font-size: 15px;
+  }
+  /* -----------------------------------------
+	Wish CSS
+	----------------------------------------- */
+  .wish-section {
+    border-top: 1px solid #a2a2a2;
+  }
+  .wish-section .container-fluid {
+    width: 100%;
+    max-width: 720px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .wish-section .image {
+    background: none;
+    padding: 0;
+  }
+  .wish-section .image img {
+    display: block;
+    width: 100%;
+    opacity: 1;
+  }
+  .wish-section .content {
+    max-width: 568px;
+    padding: 30px 0;
+  }
+  /* -----------------------------------------
+	Order Details CSS
+	----------------------------------------- */
+  .order-details-section .track {
+    margin-bottom: 70px;
+    margin-top: 40px;
+  }
+  .order-details-section .track .text {
+    font-size: 12px;
+  }
+  .order-details-section .article-item {
+    margin-bottom: 20px;
+  }
+  .product-details-area .product-details .product-action .primary-btn {
+    margin-top: 10px;
+    padding: 12px 18px;
+  }
+  .product-details-area .product-details .product-action .wishlist-btn {
+    margin-top: 10px;
+  }
+  .product-details-area .product-details .product-action .product-qty {
+    margin-top: 10px;
+  }
+  .product-details-area .product-single-tabs .tab-content .product-reviews .all-reviews .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .product-details-area .product-single-tabs .tab-content .product-reviews .all-reviews .card .image {
+    max-width: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+    margin-bottom: 15px;
+  }
+  .product-details-area .product-single-tabs .tab-content .product-reviews .all-reviews .card .content {
+    padding-left: 0;
+  }
+  .wishlist-section .wishlist-table table {
+    text-align-last: left;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* -----------------------------------------
+	Banner CSS
+	----------------------------------------- */
+  .home-banner-area .banner-content .title {
+    font-size: 42px;
+  }
+  .home-banner-area .banner-content .text {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* -----------------------------------------
+	Gallery CSS
+	----------------------------------------- */
+  .gallery-section .card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .gallery-section .card .image {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 30%;
+            flex: 0 0 30%;
+    max-width: 30%;
+    margin: 0;
+  }
+  .gallery-section .card .content {
+    padding-left: 16px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 70%;
+            flex: 0 0 70%;
+    max-width: 70%;
+  }
+  .gallery-section .card .content .title {
+    margin-bottom: 5px;
+  }
+  .gallery-section .card .content .text {
+    margin-bottom: 10px;
+  }
+  /* -----------------------------------------
+	Promo Service CSS
+	----------------------------------------- */
+  .promo-service-section .card {
+    padding: 20px 20px 20px 25px;
+  }
+  .promo-service-section .card .title {
+    font-size: 18px;
+  }
+  /* -----------------------------------------
+	Footer CSS
+	----------------------------------------- */
+  .footer-area .align-items-center {
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: start !important;
+  }
+  /* -----------------------------------------
+	Aside Widget CSS
+	----------------------------------------- */
+  .aside-widget-area .widget-post {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .aside-widget-area .widget-post h3 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .aside-widget-area .widget-post .article-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+  .aside-widget-area .widget-post .article-item:last-child {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d4d4d4;
+  }
+  .product-details-area .product-details .product-action {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  .product-details-area .product-details .product-action .primary-btn {
+    margin-top: 0;
+    padding: 12px 18px;
+  }
+  .service-details-area .aside-widget-area .widget-product {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .service-details-area .aside-widget-area .widget-product h3 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .service-details-area .aside-widget-area .widget-product .article-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    padding-right: 10px;
+  }
+  .service-details-area .aside-widget-area .widget-product .article-item:last-child {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d4d4d4;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* Reset CSS */
+  body {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  h3, .h3 {
+    font-size: 20px;
+  }
+  .ptb-50 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .ptb-100 {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  .pt-100 {
+    padding-top: 90px;
+  }
+  .pb-100 {
+    padding-bottom: 90px;
+  }
+  .ptb-70 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .pt-70 {
+    padding-top: 60px;
+  }
+  .pb-70 {
+    padding-bottom: 60px;
+  }
+  .no-wrap {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  p {
+    font-size: 15px;
+  }
+  /* Section Title CSS */
+  .section-title {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -5px;
+  }
+  .section-title h2 {
+    font-size: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 17px;
+  }
+  .section-title h2 span {
+    width: 70px;
+  }
+  .section-title p {
+    max-width: 560px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  /* -----------------------------------------
+	Banner CSS
+	----------------------------------------- */
+  .home-banner-area .banner-content {
+    max-width: 512px;
+    padding: 100px 0 160px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home-banner-area .banner-content .title {
+    font-size: 50px;
+    margin-top: -1px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  .home-banner-area .banner-content .text {
+    font-size: 15px;
+    margin-bottom: 25px;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home-banner-area.banner-style-two .banner-content {
+    padding: 100px 0;
+    text-align: center;
+  }
+  .home-banner-area.banner-style-two .banner-content .title {
+    padding-bottom: 0;
+    margin-bottom: 20px;
+  }
+  .home-banner-area.banner-style-three .banner-content {
+    padding: 100px 0 140px;
+  }
+  .home-banner-area.banner-style-three .banner-content .title {
+    padding-bottom: 0;
+  }
+  /* -----------------------------------------
+	About CSS
+	----------------------------------------- */
+  .about-section::before {
+    height: 25%;
+  }
+  .about-section .bg-shape img {
+    height: 35%;
+  }
+  .about-section .content .title {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  .about-section .content .title span {
+    bottom: -2px;
+  }
+  .about-section .content .text {
+    margin-bottom: 20px;
+  }
+  .about-section .content .content-list {
+    margin-bottom: 25px;
+  }
+  .about-section.style-two .image .overlay-image {
+    left: -15px;
+    bottom: 45px;
+  }
+  .about-section.style-two .content .title {
+    margin-bottom: 15px;
+  }
+  .about-section.style-two .content .text {
+    margin-bottom: 20px;
+  }
+  .blockquote {
+    font-size: 17px;
+  }
+  /* -----------------------------------------
+	Gallery CSS
+	----------------------------------------- */
+  .gallery-section .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .gallery-section .card .image {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+  .gallery-section .card .content {
+    padding: 0;
+    max-width: 100%;
+  }
+  .gallery-section .card .content .title {
+    margin-bottom: 5px;
+  }
+  .gallery-section .card .content .text {
+    margin-bottom: 10px;
+  }
+  .gallery-section .card .content .price {
+    display: block;
+    line-height: 1;
+  }
+  .promo-contact-section.style-three .p-0 {
+    padding: 0 15px !important;
+  }
+  /* -----------------------------------------
+	Service CSS
+	----------------------------------------- */
+  .service-section {
+    margin-top: 0;
+  }
+  .service-section .card {
+    overflow: hidden;
+  }
+  .service-section .card .image {
+    -webkit-transform: none;
+            transform: none;
+  }
+  /* -----------------------------------------
+	Promo Service CSS
+	----------------------------------------- */
+  .promo-service-section-two .image img {
+    display: block;
+    width: 100%;
+  }
+  .promo-service-section-two .pr-100 {
+    padding-right: 0;
+    padding: 30px 15px 0 15px !important;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
+  .promo-service-section-two .content .title {
+    margin-top: -3px;
+    line-height: 1;
+  }
+  .promo-service-section-two .card {
+    padding: 20px 20px 20px 30px;
+  }
+  .appointment-section .appointment-form {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* -----------------------------------------
+	Newsletter CSS
+	----------------------------------------- */
+  .newsletter-section::before {
+    top: unset;
+    bottom: 0;
+    height: 40%;
+  }
+  .newsletter-section .content h2 {
+    padding-bottom: 14px;
+    margin-bottom: 15px;
+  }
+  .newsletter-section .content p {
+    margin-bottom: 20px;
+  }
+  .newsletter-section.style-two .image {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .newsletter-section.style-two::before {
+    bottom: unset;
+    top: 0;
+    height: 66%;
+  }
+  /* -----------------------------------------
+	Blog CSS
+	----------------------------------------- */
+  .blog-section .blog-slider .slider-item .card {
+    padding: 20px;
+  }
+  .blog-section-two .card .content .time {
+    margin-bottom: 10px;
+  }
+  .blog-section-two .card .content .title {
+    margin-bottom: 10px;
+  }
+  .blog-section-two .card .content .info-list {
+    margin-bottom: 15px;
+  }
+  /* -----------------------------------------
+	Testimonial CSS
+	----------------------------------------- */
+  .testimonial-section .container-inner .image {
+    margin-bottom: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    overflow: hidden;
+  }
+  .testimonial-section .container-inner .image .shape {
+    position: absolute;
+    left: 60px;
+    top: 10px;
+    height: 100%;
+  }
+  .testimonial-section .container-inner .content {
+    padding: 0 15px;
+    text-align: center;
+  }
+  .testimonial-section .container-inner .content .quote {
+    width: 130px;
+    height: 90px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .testimonial-section .container-inner .content .title span {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .testimonial-section .container-inner .slider-item .text {
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .testimonial-section .container-inner .testimonial-slider {
+    padding: 0 15px 20px;
+    text-align: center;
+  }
+  .testimonial-section-two .content .title {
+    margin-top: -4px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .testimonial-section-two .testimonial-slider {
+    padding: 0;
+    text-align: center;
+  }
+  .testimonial-section-two .slider-item .text {
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+  }
+  .testimonial-section-two .image .quote {
+    padding: 20px;
+    left: 2px;
+  }
+  .testimonial-section-three .owl-carousel .owl-nav button[class*=owl-] {
+    top: 10%;
+  }
+  .testimonial-section-three #owl-custom-dots {
+    padding-top: 35px;
+  }
+  .testimonial-section-three #owl-custom-dots .owl-dot img {
+    max-width: 70px;
+  }
+  /* -----------------------------------------
+	Team CSS
+	----------------------------------------- */
+  .team-section-two .card .content .title {
+    margin-bottom: 5px;
+  }
+  /* -----------------------------------------
+	Shop CSS
+	----------------------------------------- */
+  .shop-section .widget-area .widget-product .article-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .shop-section .widget-area .widget-product .article-item .image {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  .shop-section .widget-area .widget-product .article-item .content {
+    max-width: 100%;
+    padding-left: 0;
+  }
+  .shop-section .widget-area .widget-category h3.title {
+    padding: 14px;
+  }
+  .shop-section .toolbox .toolbox-right {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 30%;
+            flex: 0 0 30%;
+    max-width: 30%;
+  }
+  /* -----------------------------------------
+	Footer CSS
+	----------------------------------------- */
+  .footer-area .footer-top {
+    padding-top: 90px;
+    padding-bottom: 60px;
+  }
+  .footer-area .footer-widget {
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  .footer-area h3 {
+    margin-bottom: 20px;
+  }
+  .footer-area .border-right {
+    border-color: transparent !important;
+  }
+  .footer-area .align-items-center {
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: start !important;
+  }
+  .footer-area.style-two::before, .footer-area.style-three::before {
+    content: none;
+  }
+  .footer-area.style-two .border-right, .footer-area.style-three .border-right {
+    border-color: transparent !important;
+  }
+  .footer-area.style-two .container::after, .footer-area.style-three .container::after {
+    content: none;
+  }
+  /* -----------------------------------------
+	Page Title CSS
+	----------------------------------------- */
+  .page-title-area {
+    padding: 100px 0;
+  }
+  .page-title-area .page-title-content h1 {
+    margin-top: -3px;
+    margin-bottom: 10px;
+  }
+  /* -----------------------------------------
+	Aside Widget CSS
+	----------------------------------------- */
+  .aside-widget-area .widget-post {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .aside-widget-area .widget-post h3 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .aside-widget-area .widget-post .article-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    padding-right: 10px;
+  }
+  .aside-widget-area .widget-post .article-item:last-child {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d4d4d4;
+  }
+  .service-details-area .panel-group .panel {
+    padding-bottom: 0;
+  }
+  .service-details-area .aside-widget-area .widget-product {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .service-details-area .aside-widget-area .widget-product h3 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .service-details-area .aside-widget-area .widget-product .article-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    padding-right: 10px;
+  }
+  .service-details-area .aside-widget-area .widget-product .article-item:last-child {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d4d4d4;
+  }
+  /* -----------------------------------------
+	Checkout CSS
+	----------------------------------------- */
+  .checkout-section .checkout-form .card .label .image img {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50px;
+            flex: 0 0 50px;
+    max-width: 50px;
+  }
+  /* -----------------------------------------
+	Wish CSS
+	----------------------------------------- */
+  .wish-section {
+    border-top: 1px solid #a2a2a2;
+  }
+  .wish-section .container-fluid {
+    width: 100%;
+    max-width: 720px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .wish-section .image {
+    background: none;
+    padding: 0;
+  }
+  .wish-section .image img {
+    display: block;
+    width: 100%;
+    opacity: 1;
+  }
+  .wish-section .content {
+    max-width: 568px;
+    padding: 30px 0;
+  }
+  .order-details-section .article-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .order-details-section .article-item .image {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  .order-details-section .article-item .content {
+    max-width: 100%;
+    padding-left: 0;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* Reset CSS */
+  body {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 38px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  .sub-title {
+    font-size: 16px;
+  }
+  .top-content p {
+    max-width: 430px;
+  }
+  /* Section Title CSS */
+  .section-title {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: -5px;
+  }
+  .section-title h2 {
+    font-size: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 17px;
+  }
+  .section-title h2 span {
+    width: 70px;
+  }
+  .section-title p {
+    max-width: 560px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  /* -----------------------------------------
+	Banner CSS
+	----------------------------------------- */
+  .home-banner-area .banner-content {
+    padding: 150px 0 210px;
+  }
+  .home-banner-area .banner-content .title {
+    font-size: 60px;
+    margin-top: -1px;
+  }
+  .home-banner-area .banner-content .text {
+    font-size: 15px;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home-banner-area.banner-style-two .banner-content {
+    padding: 150px 0;
+  }
+  .home-banner-area.banner-style-two .banner-content .text {
+    margin-left: 0;
+  }
+  /* -----------------------------------------
+	About CSS
+	----------------------------------------- */
+  .about-section .content .title {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  .about-section .content .title span {
+    bottom: -2px;
+  }
+  .about-section .content .text {
+    margin-bottom: 20px;
+  }
+  .about-section .content .content-list {
+    margin-bottom: 25px;
+  }
+  .about-section.style-two .image .overlay-image {
+    left: -25px;
+    bottom: 45px;
+  }
+  /* -----------------------------------------
+	Gallery CSS
+	----------------------------------------- */
+  .gallery-section .card .image {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 35%;
+            flex: 0 0 35%;
+    max-width: 35%;
+  }
+  .gallery-section .card .content {
+    padding-left: 12px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 65%;
+            flex: 0 0 65%;
+    max-width: 65%;
+  }
+  .gallery-section .card .content .title {
+    margin-bottom: 5px;
+  }
+  .gallery-section .card .content .text {
+    margin-bottom: 10px;
+  }
+  /* -----------------------------------------
+	Promo Content CSS
+	----------------------------------------- */
+  .promo-contact-section .card .content .text {
+    font-size: 14px;
+  }
+  .promo-service-section-two .pr-100 {
+    padding-right: 0;
+  }
+  /* -----------------------------------------
+	Service CSS
+	----------------------------------------- */
+  .service-section .card .content .text {
+    padding: 0 7px;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  .service-section-two .content-list {
+    padding: 15px 20px;
+  }
+  .service-section-two .content-list li {
+    margin-bottom: 13px;
+  }
+  .service-section-two .content {
+    padding-right: 20px;
+  }
+  .service-section-three .content-list {
+    max-height: 290px;
+  }
+  /* -----------------------------------------
+	Blog CSS
+	----------------------------------------- */
+  .blog-section .blog-slider .slider-item .card {
+    padding: 20px;
+  }
+  /* -----------------------------------------
+	Newsletter CSS
+	----------------------------------------- */
+  .newsletter-section .content h2 {
+    padding-bottom: 14px;
+    margin-bottom: 15px;
+  }
+  .newsletter-section .content p {
+    margin-bottom: 20px;
+  }
+  /* -----------------------------------------
+	Testimonial CSS
+	----------------------------------------- */
+  .testimonial-section .container-inner .image {
+    margin-top: 0;
+  }
+  .testimonial-section .container-inner .image .shape {
+    width: 90%;
+    left: 0;
+    top: 2px;
+  }
+  .testimonial-section .container-inner .content .quote {
+    margin-bottom: 30px;
+  }
+  /* -----------------------------------------
+	Team CSS
+	----------------------------------------- */
+  .team-section-two .card .content .title {
+    margin-bottom: 5px;
+  }
+  .team-section-two .card .content .info-list li {
+    font-size: 14px;
+  }
+  .product-list .card .content .content-list .review i {
+    font-size: 16px;
+  }
+  .shop-section .widget-area .widget-product .article-item .content h3 {
+    font-size: 14px;
+  }
+  /* -----------------------------------------
+	Footer CSS
+	----------------------------------------- */
+  .footer-area .footer-top [class*='col-'] {
+    padding: 0;
+  }
+  .footer-area .footer-top [class*='col-']:first-child {
+    padding: 0 15px;
+  }
+  .footer-area .navbar-brand {
+    margin-bottom: 10px;
+  }
+  .footer-area .footer-widget {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .footer-area.style-two::before, .footer-area.style-three::before {
+    width: 5%;
+  }
+  /* -----------------------------------------
+	Page Title CSS
+	----------------------------------------- */
+  .page-title-area {
+    padding: 100px 0;
+  }
+  .page-title-area .page-title-content h1 {
+    margin-top: -3px;
+    margin-bottom: 10px;
+  }
+  /* -----------------------------------------
+	Aside Widget CSS
+	----------------------------------------- */
+  .aside-widget-area .widget-post .article-item .content h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .aside-widget-area .widget-post .article-item .content .author {
+    font-size: 12px;
+  }
+  .wish-section .content {
+    max-width: 450px;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

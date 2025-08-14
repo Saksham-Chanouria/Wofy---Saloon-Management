@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Mirrored from templates.hibootstrap.com/wofy/default/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Jan 2025 08:45:54 GMT -->
+    <head>
+        <!--=== meta tags ===-->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Author: HiBootstrap, Category: Beauty, Multipurpose, HTML, SASS, Bootstrap" />
+
+        <!--=== link Oof CSS files ===-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/boxicons.min.css" />
+        <link rel="stylesheet" href="assets/css/flaticon.css" />
+        <link rel="stylesheet" href="assets/css/animate.min.css" />
+        <link rel="stylesheet" href="assets/css/nice-select.css" />
+        <link rel="stylesheet" href="assets/css/magnific-popup.min.css" />
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="assets/css/meanmenu.min.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+        <link rel="stylesheet" href="assets/css/theme-dark.css" />
+
+
+        <title>Wofy - Beauty Saloon & Spa Massage Center HTML Template</title>
+        <link rel="icon" href="assets/images/favicon.png" type="image/png"/>
+        <script>
+            function fetchlocation()
+            {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                            (position) => {
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+                        document.getElementById("longitude").value = longitude;
+                        document.getElementById("latitude").value = latitude;
+                        console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+
+                    },
+                            (error) => {
+                        console.error("Error getting location:", error.message);
+                    }
+                    );
+                } else {
+                    console.error("Geolocation is not supported by this browser.");
+                }
+            }
+
+            function submitdata()
+            {
+                var name = document.getElementById("ownername").value;
+                var email = document.getElementById("owneremail").value;
+                var password = document.getElementById("password").value;
+                var profile = document.getElementById("photo").files[0];
+                var shopname = document.getElementById("shopname").value;
+                var desc = document.getElementById("desc").value;
+                var shopphoto = document.getElementById("shopphoto").files[0];
+                var longitude = document.getElementById("longitude").value;
+                var latitude = document.getElementById("latitude").value;
+
+                var stime = document.getElementById("stime").value;
+                var etime = document.getElementById("etime").value;
+                var experience = document.getElementById("experience").value;
+                var selectElement = document.getElementById("d1").querySelector("select");
+                var city = selectElement.value;
+
+
+                var formdata = new FormData();
+                formdata.append("city", city);
+                formdata.append("name", name);
+                formdata.append("email", email);
+                formdata.append("password", password);
+                formdata.append("profile", profile);
+                formdata.append("shopname", shopname);
+                formdata.append("desc", desc);
+                formdata.append("shopphoto", shopphoto);
+                formdata.append("longitude", longitude);
+                formdata.append("latitude", latitude);
+                formdata.append("stime", stime);
+                formdata.append("etime", etime);
+                formdata.append("experience", experience);
+                var url = "./OwnerDetails"
+                fetch(url, {method: "POST", body: formdata})
+                        .then(response => response.text())
+                        .then(ans => renderAsHtml(ans));
+            }
+            function renderAsHtml(ans)
+            {
+
+
+
+                if (ans === "success")
+                {
+                    alert("Application Sent Succesfully");
+                    window.location.href = "/OwnerLogin";
+
+                } else if (ans === "fail")
+                {
+                    alert("Applicant Already registered");
+                } else
+                {
+                    alert(ans);
+                }
+
+
+            }
+            function fetchcity()
+            {
+                var url = "./AdminGetCities";
+
+                fetch(url, {method: "GET"})
+                        .then(response => response.text())
+                        .then(ans => renderCities(ans));
+            }
+            function renderCities(ans)
+            {
+                ans = ans.trim();
+
+                var mainobj = JSON.parse(ans);
+                var arr = mainobj["ans"];
+
+                console.log(arr);
+
+
+                var s = "<select class=\"form-control\">";
+                for (var i = 0; i < arr.length; i++) {
+                    var ct = arr[i];
+                    s += "<option value=\"" + ct.cityid + "\">" + ct.cityname + "</option>";
+                }
+                s += "</select>";
+
+
+                document.getElementById("d1").innerHTML = s;
+
+            }
+        </script>
+    </head>
+    <body onload="fetchcity()">
+        <!-- start preloader area -->
+        <div id="preloader">
+            <div class="loader"><span></span></div>
+        </div>
+
+        <div th:replace="OwnerNavbar :: header"></div>
+
+        <!-- end header area -->
+
+        <!-- start page title area-->
+        <div class="page-title-area">
+            <div class="container">
+                <div class="page-title-content">
+                    <h1>Register</h1>
+                    <ul>
+                        <li class="item"><a href="index.html">Home</a></li>
+                        <li class="item active"><span></span>Register</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-image">
+                <img src="assets/images/page-title/register.jpg" alt="Demo Image">
+            </div>
+        </div>
+        <!-- end page title area -->
+
+        <!-- start authentication area -->
+        <div class="authentication-section">
+            <div class="container">
+                <div class="main-form ptb-100">
+                    <form id="#authForm">
+                        <h2>Owner Details</h2> 
+                        <div class="form-group">
+                            <label for="ownername">Owner Name*</label>
+                            <input type="text" id="ownername" class="form-control" placeholder="Enter Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="owneremail">Email*</label>
+                            <input type="email" id="owneremail" class="form-control" placeholder="Enter a Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password*</label>
+                            <input type="password" id="password" class="form-control" placeholder="Enter a Password" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="photo">Profile Photo*</label>
+                            <input type="file" id="photo" class="form-control" placeholder="Select Your Profile Photo" required >
+                        </div>
+                        <hr><!-- comment -->
+                        <h2> Shop Details</h2>
+
+                        <div class="form-group">
+                            <label for="shopname">Shop Name*</label>
+                            <input type="text" id="shopname" class="form-control" placeholder="Enter Your Shop name" required >
+                        </div>
+                        <div class="form-group">
+                            <label for="desc">Shop Description*</label>
+
+                            <textarea id="desc" name="desc" rows="5" cols="10" class="form-control" placeholder="Enter Shop Description"></textarea>
+                        </div>
+                        <label for="shopcity">Shop City*</label>
+                        <div class="form-group" id="d1" name="shopcity">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="shopphoto">Shop Photo*</label>
+                            <input type="file" id="shopphoto" class="form-control" placeholder="Select Your Shop Photo" required >
+                        </div>
+                        <div class="form-group">
+                            <label for="stime">Shop Opening Time*</label>
+                            <input type="text" id="stime" class="form-control" placeholder="Select Your Shop Opening Time" required >
+                        </div>
+                        <div class="form-group">
+                            <label for="etime">Shop Closing Time*</label>
+                            <input type="text" id="etime" class="form-control" placeholder="Select Your Shop Closing Time" required >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">Working Experience Years*</label>
+                            <input type="text" id="experience" class="form-control" placeholder="Please Fill Working Experince years" required >
+                        </div>
+                        <div class="form-group">
+                            <label for="lattitude">Shop Latitude*</label>
+                            <input type="text" id="latitude" class="form-control" placeholder="Enter Your Shop Latitude" required >
+                        </div>
+                        <div class="form-group">
+                            <label for="longitude">Shop Longitude*</label>
+                            <input type="text" id="longitude" class="form-control" placeholder="Enter Your Shop Longitude" required >
+                        </div>
+                        <div class="row align-items-start mb-30">
+                            <div class="col-lg-12">
+                                <div class="checkbox">
+
+                                    <label >Note :- If Your current location is Your Shop Location then Click Button else Enter Manually<a href="#"></a><a href="#"></a></label>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="primary-btn" onclick="fetchlocation()">
+                            Fetch Location
+                        </button>
+                        <div class="row align-items-start mb-30">
+                            <div class="col-lg-12">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="agreement">
+                                    <label for="agreement">I agreed Wofy <a href="terms-of-service.html">Terms of Services</a> and <a href="privacy-policy.html">Privacy Policy</a></label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="primary-btn" onclick="submitdata()">
+                            Register
+                        </button>
+                        <div class="content">
+                            <p>Already have an account? <a href="login.html">Login</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- end authentication section -->
+
+        <!-- start footer area -->
+        <footer class="footer-area">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 col-md-6 col-sm-6 col-12">
+                            <div class="footer-widget ptb-100 border-right">
+                                <div class="navbar-brand">
+                                    <a href="index.html">
+                                        <img src="assets/images/logo.png" alt="Logo" />
+                                    </a>
+                                </div>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                <div class="social-link">
+                                    <h3>Follow Us On</h3>
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                        <i class='bx bxl-facebook'></i>
+                                    </a>
+                                    <a href="https://www.twitter.com/" target="_blank">
+                                        <i class='bx bxl-twitter'></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/" target="_blank">
+                                        <i class='bx bxl-linkedin'></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/" target="_blank">
+                                        <i class='bx bxl-instagram'></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                            <div class="footer-widget ptb-100">
+                                <h3>Company</h3>
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="about.html">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html">Blogs</a>
+                                    </li>
+                                    <li>
+                                        <a href="team.html">Team</a>
+                                    </li>
+                                    <li>
+                                        <a href="shop-right-sidebar.html">Shop</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                            <div class="footer-widget ptb-100">
+                                <h3>Services</h3>
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="services-details.html">Spa</a>
+                                    </li>
+                                    <li>
+                                        <a href="services-details.html">Hair Cut</a>
+                                    </li>
+                                    <li>
+                                        <a href="services-details.html">Massage</a>
+                                    </li>
+                                    <li>
+                                        <a href="services-details.html">Makeup</a>
+                                    </li>
+                                    <li>
+                                        <a href="services-details.html">Bridal</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                            <div class="footer-widget ptb-100">
+                                <h3>Quick Links</h3>
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="faq.html">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="appointment.html">Appointment</a>
+                                    </li>
+                                    <li>
+                                        <a href="terms-of-service.html">Terms & Conditions</a>
+                                    </li>
+                                    <li>
+                                        <a href="privacy-policy.html">Privacy Policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="my-account.html">My Account</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copy-right-area border-top">
+                    <div class="copy-right-content">
+                        <span>
+                            Copyright @<script>document.write(new Date().getFullYear())</script> Wofy. Designed By
+                            <a href="https://hibootstrap.com/" target="_blank">
+                                HiBootstrap.com
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end footer area -->
+
+        <!--=== start go to top area ===-->
+        <div class='go-top'>
+            <i class='bx bx-upvote'></i>
+        </div>
+        <!--=== end go to top area ===-->
+
+        <!--=== link of JS files ===-->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/smoothscroll.js"></script>
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="assets/js/jquery.mixitup.min.js"></script>
+        <script src="assets/js/range-slider.min.js"></script>
+        <script src="assets/js/meanmenu.min.js"></script>
+        <script src="assets/js/form-validator.min.js"></script>
+        <script src="assets/js/contact-form-script.js"></script>
+        <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
+
+    <!-- Mirrored from templates.hibootstrap.com/wofy/default/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Jan 2025 08:45:55 GMT -->
+</html>

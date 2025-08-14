@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Mirrored from templates.hibootstrap.com/wofy/default/product-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Jan 2025 08:46:32 GMT -->
+    <head>
+        <!--=== meta tags ===-->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Author: HiBootstrap, Category: Beauty, Multipurpose, HTML, SASS, Bootstrap" />
+
+        <!--=== link Oof CSS files ===-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/boxicons.min.css" />
+        <link rel="stylesheet" href="assets/css/flaticon.css" />
+        <link rel="stylesheet" href="assets/css/animate.min.css" />
+        <link rel="stylesheet" href="assets/css/nice-select.css" />
+        <link rel="stylesheet" href="assets/css/magnific-popup.min.css" />
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="assets/css/meanmenu.min.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+        <link rel="stylesheet" href="assets/css/theme-dark.css" />
+
+        <!--=== title & favicon ===-->
+        <title>Wofy - Beauty Saloon & Spa Massage Center HTML Template</title>
+        <link rel="icon" href="assets/images/favicon.png" type="image/png"/>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+            function UserShowSaloonDetail() {
+                // Get the current URL
+                const currentUrl = new URL(window.location.href);
+
+                // Extract query parameters
+                const params = new URLSearchParams(currentUrl.search);
+
+                // Access specific parameters
+                const ownerid = params.get('ownerid');
+
+                // Create a query string for the GET request
+                const endpointUrl = `./userShowAllSaloonDetails?ownerid=${encodeURIComponent(ownerid)}`;
+
+                // Perform the GET request
+                fetch(endpointUrl, {method: "GET"})
+                        .then(response => response.text())
+                        .then(ans => renderSaloonDetails(ans))
+                        .catch(error => console.error('Error fetching saloons:', error));
+            }
+
+            function UserShowSaloonPackage() {
+                // Get the current URL
+                const currentUrl = new URL(window.location.href);
+
+                // Extract query parameters
+                const params = new URLSearchParams(currentUrl.search);
+
+                // Access specific parameters
+                const ownerid = params.get('ownerid');
+
+                // Create a query string for the GET request
+                const endpointUrl = `./userShowAllSaloonPackage?ownerid=${encodeURIComponent(ownerid)}`;
+
+                // Perform the GET request
+                fetch(endpointUrl, {method: "GET"})
+                        .then(response => response.text())
+                        .then(ans => renderSaloonPackage(ans))
+                        .catch(error => console.error('Error fetching saloons:', error));
+            }
+
+            function renderSaloonPackage(ans) {
+                ans = ans.trim();
+                var mainobj = JSON.parse(ans);
+                const packages = mainobj["ans"];
+
+                console.log(packages);
+
+                const productList = document.querySelector(".product-list .row");
+                const servicesList = document.querySelector("#ser .row");
+
+                productList.innerHTML = ""; // Clear existing package content
+                servicesList.innerHTML = ""; // Clear existing service content
+
+                packages.forEach(pkg => {
+                    const packageCard = `
+            <div class="col-lg-3 col-md-6">
+                <div class="card mb-30">
+                    <div class="image">
+                        <a href="checkout?packageid=${pkg.packageid}">
+                            <img src="myuploads/${pkg.packagephoto}" alt="${pkg.packagename}">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <ul class="content-list">
+                            <li class="card-btn">
+                                <a href="wishlist.html"><i class="flaticon heart"></i></a>
+                                <a href="#" role="button" data-bs-toggle="modal" data-target="#addCartModal"><i class="flaticon shopping-bag"></i></a>
+                            </li>
+                            <li class="review">
+                                <i class="flaticon star"></i>
+                                <i class="flaticon star"></i>
+                                <i class="flaticon star"></i>
+                                <i class="flaticon star"></i>
+                                <i class="flaticon star"></i>
+                            </li>
+                        </ul>
+                        <div class="info">
+                            <h3 class="title">
+                                <a href="checkout?packageid=${pkg.packageid}">${pkg.packagename}</a>
+                            </h3>
+                            <span class="price">
+                                <del>₹${pkg.price}</del> ₹${pkg.offerprice}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+                    if (pkg.type === "service") {
+                        servicesList.insertAdjacentHTML("beforeend", packageCard);
+                    } else {
+                        productList.insertAdjacentHTML("beforeend", packageCard);
+                    }
+                });
+            }
+
+
+            function renderSaloonDetails(ans)
+            {
+                ans = ans.trim();
+                var mainobj = JSON.parse(ans);
+                const saloons = mainobj["ans"];
+
+                console.log(saloons)
+
+                document.getElementById("shopName").innerText = saloons[0].shopname;
+                document.getElementById("shopdesc").innerText = saloons[0].shopdesc;
+                document.getElementById("shopdesc2").innerText = saloons[0].shopdesc;
+                document.getElementById("ownernm").innerHTML = "<i class='flaticon point'></i>Owner Name : " + saloons[0].ownername;
+
+                document.getElementById("ownernm2").innerHTML = "<i class='bx bx-check-circle' ></i>Owner Name : " + saloons[0].ownername;
+
+                document.getElementById("ownerem").innerHTML = "<i class='flaticon point'></i>Owner Email : " + saloons[0].owneremail;
+
+                document.getElementById("ownerem2").innerHTML = "<i class='bx bx-check-circle' ></i>Owner Email : " + saloons[0].owneremail;
+
+
+                document.getElementById("ownerph").src = "myuploads/" + saloons[0].ownerphoto;
+
+                document.getElementById("ownerph").style.height = "180px";
+
+//                document.getElementById("mainph").src = "myuploads/" + saloons[0].shopphoto;
+//                document.getElementById("mainph2").innerhref = "myuploads/" + saloons[0].shopphoto;
+//                document.getElementById("mainph").style.height = "499px";
+//                document.getElementById("mainph2").style.height = "499px";
+
+                document.getElementById("shoptime").innerHTML = "<i class='flaticon point'></i>Shop Timings : " + saloons[0].starttime + "&nbsp to &nbsp" + saloons[0].endtime;
+                document.getElementById("totalexp").innerHTML = "<i class='flaticon point'></i>Total Experience : " + saloons[0].experience + " years";
+
+                document.getElementById("shoptime2").innerHTML = "<i class='bx bx-check-circle'></i>Shop Timings : " + saloons[0].starttime + "&nbsp to &nbsp" + saloons[0].endtime;
+                document.getElementById("totalexp2").innerHTML = "<i class='bx bx-check-circle'></i>Total Experience : " + saloons[0].experience + " years";
+
+                var latitude = saloons[0].latitude;
+                var longitude = saloons[0].longitude;
+                document.getElementById("gmap_canvas").src = "https://maps.google.com/maps?q=" + latitude + "," + longitude + "&ie=UTF8&iwloc=&output=embed";
+
+            }
+        </script>
+
+        <style>
+            #prod-desc {
+                display: flex;
+                align-items: center; /* Align items vertically */
+                gap: 20px; /* Add space between image and list */
+            }
+
+            #ownerph {
+                width: 150px; /* Adjust width as needed */
+                height: 150px; /* Adjust height as needed */
+                object-fit: cover; /* Maintain aspect ratio and avoid stretching */
+                border-radius: 10px; /* Optional: Add rounded corners */
+            }
+
+            .desc-list {
+                flex: 1; /* Allow the list to take remaining space */
+                list-style-type: none; /* Remove default list styles */
+                padding: 0;
+                margin: 0;
+            }
+
+            .product-single-slider img {
+                height: 500px;
+                object-fit: cover; /* Ensure image maintains aspect ratio */
+                width: 100%; /* Maintain responsiveness */
+            }
+
+            .owl-dot img {
+                height: 100px; /* Adjust thumbnail height */
+                width: auto; /* Maintain aspect ratio */
+                object-fit: cover;
+            }
+
+
+        </style>
+
+        <script>
+            function UserShowAllPhotos(){
+                // Get the current URL
+                const currentUrl = new URL(window.location.href);
+
+                // Extract query parameters
+                const params = new URLSearchParams(currentUrl.search);
+
+                // Access specific parameters
+                const ownerid = params.get('ownerid');
+
+                // Create a query string for the GET request
+                const endpointUrl = `./userShowSaloonPhotos?ownerid=${encodeURIComponent(ownerid)}`;
+
+                // Perform the GET request
+                fetch(endpointUrl, {method: "GET"})
+                        .then(response => response.text())
+                        .then(ans => renderSaloonPhotos(ans))
+                        .catch(error => console.error('Error fetching saloons:', error));
+            }
+
+            function renderSaloonPhotos(ans) {
+                ans = ans.trim();
+                var mainobj = JSON.parse(ans);
+                const saloons = mainobj["ans"];
+
+                console.log("Photos", saloons);
+
+                let sliderContainer = document.querySelector(".product-single-slider");
+                let dotsContainer = document.getElementById("owl-custom-dots");
+
+                // Clear previous content
+                sliderContainer.innerHTML = "";
+                dotsContainer.innerHTML = "";
+
+                // Append images dynamically
+                saloons.forEach((saloon, index) => {
+                    let imageDiv = document.createElement("div");
+                    imageDiv.classList.add("image");
+                    imageDiv.innerHTML = `
+            <a href="myuploads/${saloon.photo}">
+                <img src="myuploads/${saloon.photo}" alt="Saloon Image">
+            </a>
+        `;
+                    sliderContainer.appendChild(imageDiv);
+
+                    let dotDiv = document.createElement("div");
+                    dotDiv.classList.add("col-3", "owl-dot");
+                    if (index === 0)
+                        dotDiv.classList.add("active"); // First image should be active
+                    dotDiv.innerHTML = `<img src="myuploads/${saloon.photo}" alt="Saloon Thumbnail">`;
+                    dotsContainer.appendChild(dotDiv);
+                });
+
+                // Re-initialize Owl Carousel
+                $(".product-single-slider").owlCarousel("destroy"); // Destroy old instance
+                $(".product-single-slider").owlCarousel({
+                    items: 1,
+                    loop: true,
+                    nav: false,
+                    dots: false,
+                    autoplay: true,
+                    autoplayTimeout: 3000,
+                    autoplayHoverPause: true,
+                });
+            }
+        </script>
+
+    </head>
+    <body onload="UserShowSaloonDetail();
+            UserShowSaloonPackage();
+            userShowRatings();
+            UserShowAllPhotos()" >
+
+        <!-- start preloader area -->
+        <div id="preloader">
+            <div class="loader"><span></span></div>
+        </div>
+        <!-- end preloader area -->
+
+        <!-- start header area -->
+        <div th:replace="UserNavbar :: header"></div>
+        <!-- end header area -->
+
+        <!-- start page title area-->
+        <div class="page-title-area">
+            <div class="container">
+                <div class="page-title-content">
+                    <h1>Shop Now</h1>
+                    <ul>
+                        <li class="item"><a href="index.html">Home</a></li>
+                        <li class="item active"><span></span>Shop</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-image">
+                <img src="assets/images/page-title/product-details.jpg" alt="Demo Image">
+            </div>
+        </div>
+        <!-- end page title area -->
+
+        <!-- start product details area -->
+        <div id="product-details" class="product-details-area ptb-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="product-image-container mb-30">
+                            <div class="product-single-slider popup-gallery owl-carousel">
+                                <div class="image">
+                                    <a  href="assets/images/product/zoom/product-lg-1.jpg">
+                                        <img  src="assets/images/product/zoom/product-lg-1.jpg" alt="Demo Image">
+                                    </a>
+                                </div>
+                                <div class="image">
+                                    <a href="assets/images/product/zoom/product-lg-2.jpg">
+                                        <img src="assets/images/product/zoom/product-lg-2.jpg" alt="Demo Image">
+                                    </a>
+                                </div>
+                                <div class="image">
+                                    <a href="assets/images/product/zoom/product-lg-3.jpg">
+                                        <img src="assets/images/product/zoom/product-lg-3.jpg" alt="Demo Image">
+                                    </a>
+                                </div>
+                                <div class="image">
+                                    <a href="assets/images/product/zoom/product-lg-4.jpg">
+                                        <img src="assets/images/product/zoom/product-lg-4.jpg" alt="Demo Image">
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="owl-custom-dots" class='owl-dots row'>
+                                <div class="col-3 owl-dot">
+                                    <img src="assets/images/product/zoom/product-lg-1.jpg" alt="Demo Image">
+                                </div>
+                                <div class="col-3 owl-dot">
+                                    <img src="assets/images/product/zoom/product-lg-2.jpg" alt="Demo Image">
+                                </div>
+                                <div class="col-3 owl-dot">
+                                    <img src="assets/images/product/zoom/product-lg-3.jpg" alt="Demo Image">
+                                </div>
+                                <div class="col-3 owl-dot">
+                                    <img src="assets/images/product/zoom/product-lg-4.jpg" alt="Demo Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+                        <div class="product-details mb-30">
+                            <h2 id="shopName" class="title">Intensive Serum for Oily Skin</h2>
+                            <ul class="content-list">
+                                <li class="price1">$150</li>
+                                <li class="price2">$139</li>
+                                <li class="review">
+                                    <i class='flaticon star'></i>
+                                    <i class='flaticon star'></i>
+                                    <i class='flaticon star'></i>
+                                    <i class='flaticon star'></i>
+                                    <i class='flaticon star'></i>
+                                </li>
+                                <li> <span></span> </li>
+                            </ul>
+                            <div class="review"></div>
+                            <div class="product-desc">
+                                <ul class="desc-list">
+                                    <li id="ownernm" ><i class='flaticon point'></i>Cash on Delivery Service</li>
+                                    <li id="ownerem" ><i class='flaticon point'></i>Quick Delivery Within 3 Days</li>
+                                    <li id="shoptime" ><i class='flaticon point'></i>20 Hours of Portable Capabilities</li>
+                                    <li id="totalexp" ><i class='flaticon point'></i>5 Days Return Policy</li>
+                                </ul>
+                                <p id="shopdesc" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially.</p>
+                            </div>
+
+                            <!--                            <div class="product-action">
+                                                            <div class="product-qty">
+                                                                <button class="qty-btn minus"><i class='bx bx-minus'></i></button>
+                                                                <input type="text" class="qty-value" value="1">
+                                                                <button class="qty-btn plus"><i class='bx bx-plus'></i></button>
+                                                            </div>
+                                                            <a href="wishlist.html" class="wishlist-btn">
+                                                                <i class='bx bx-heart'></i>
+                                                            </a>
+                                                            <a href="#" role="button" data-bs-toggle="modal" data-target="#addCartModal" class="primary-btn">
+                                                                Add to Cart
+                                                            </a>
+                                                        </div>-->
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="product-single-tabs">
+                            <div class="nav-tabs-navigation">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="product-tab-desc" data-bs-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Description</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="product-tab-reviews" data-bs-toggle="tab" href="#product-reviews" role="tab" aria-controls="product-reviews" aria-selected="false">Review(02)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-tab-desc">
+                                    <p id="shopdesc2" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release.</p>
+
+                                    <div id="prod-desc" class="product-desc mb-30">
+
+                                        <img id="ownerph" src="src" alt="alt"/>
+                                        <ul class="desc-list">
+                                            <li id="ownernm2" ><i class='bx bx-check-circle' ></i> Vivamus vestibulum ntulla nec.</li>
+                                            <li id="ownerem2" ><i class='bx bx-check-circle' ></i> Aliquam tincidunt mauris eu.</li>
+                                            <li id="shoptime2" ><i class='bx bx-check-circle' ></i> Vestibulum auctor dapibus.</li>
+                                            <li id="totalexp2" ><i class='bx bx-check-circle' ></i> Praesent placerat risus quis eros.</li>
+                                        </ul>
+                                    </div>
+                                    <p class="mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything.</p>
+
+                                </div>
+
+                                <div class="tab-pane fade" id="product-reviews" role="tabpanel" aria-labelledby="product-tab-reviews">
+                                    <div class="product-reviews mb-30">
+                                        <div class="add-review">
+                                            <h3 class="title">Write Your Own Review</h3>
+                                            <p class="text">How do you rate this product?</p>
+                                            <form>
+                                                <div class="row">
+
+                                                    <div class="col-md-12">
+                                                        <div class="star-rating">
+                                                            <!--                                                            <div class="rating-input">
+                                                                                                                            <i class='flaticon star'></i>
+                                                                                                                            <i class='flaticon star'></i>
+                                                                                                                            <i class='flaticon star'></i>
+                                                                                                                            <i class='flaticon star'></i>
+                                                                                                                            <i class='flaticon star'></i>
+                                                                                                                        </div>-->
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+
+
+                                                        <table>
+                                                            <tr> <td><span class="text">Your Rating :</span></td>
+                                                                <td>
+                                                                    <img id="rating_1" src="empty_star.png" onmouseover="fill(this);" onmouseout="unfill(this);" onclick="selected(this);" width="40px;" height="40px;">
+                                                                </td>
+                                                                <td>
+                                                                    <img id="rating_2" src="empty_star.png" onmouseover="fill(this)" onmouseout="unfill(this)" onclick="selected(this)" width="40px;" height="40px;">
+                                                                </td>
+                                                                <td>
+                                                                    <img id="rating_3" src="empty_star.png" onmouseover="fill(this)" onmouseout="unfill(this)" onclick="selected(this)" width="40px;" height="40px;">
+                                                                </td>
+                                                                <td>
+                                                                    <img id="rating_4" src="empty_star.png" onmouseover="fill(this)" onmouseout="unfill(this)" onclick="selected(this)" width="40px;" height="40px;">
+                                                                </td>
+                                                                <td>
+                                                                    <img  id="rating_5" src="empty_star.png" onmouseover="fill(this)" onmouseout="unfill(this)" onclick="selected(this)" width="40px;" height="40px;">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input id="thingslike" type="text" name="name" class="form-control" required="" placeholder="Things you like">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input id="summery" type="text" name="subject" class="form-control" required="" placeholder="Summery of Your review">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <textarea id="review" name="message" class="form-control" cols="100" rows="6" required="" placeholder="Your Review"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <button type="button" onclick="addreview()" class="primary-btn">Submit Review</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <div class="all-reviews">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="card mb-30">
+                                                        <div class="image">
+                                                            <img src="assets/images/review-client-1.jpg" alt="Demo Image">
+                                                        </div>
+                                                        <div class="content">
+                                                            <span class="time">22 October, 2024</span>
+                                                            <div class="client-info">
+                                                                <h3 class="title">Marcus Ramirez</h3>
+                                                                <div class="review">
+                                                                    <i class='flaticon star'></i>
+                                                                    <i class='flaticon star'></i>
+                                                                    <i class='flaticon star'></i>
+                                                                    <i class='flaticon star'></i>
+                                                                    <i class='flaticon star'></i>
+                                                                </div>
+                                                            </div>
+                                                            <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="card mb-30">
+                                                        <div class="image">
+                                                            <img src="assets/images/review-client-2.jpg" alt="Demo Image">
+                                                        </div>
+                                                        <div class="content">
+                                                            <span class="time">17 November, 2024</span>
+                                                            <div class="client-info">
+                                                                <h3 class="title">Edward Howells</h3>
+                                                                <div class="review">
+                                                                    <i class='flaticon star'></i>
+                                                                    <i class='flaticon star'></i>
+                                                                    <i class='flaticon star'></i>
+                                                                    <i class='flaticon star'></i>
+                                                                    <i class='flaticon star'></i>
+                                                                </div>
+                                                            </div>
+                                                            <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end product details area -->
+
+        <section id="related-product" class="related-product pb-70">
+            <div class="container">
+                <div class="section-title style-two">
+                    <h2>Packages provided by this saloon</h2>
+                </div>
+                <div class="product-list">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mb-30">
+                                <div class="image">
+                                    <a href="product-details.html"><img src="assets/images/product/product-md1.png" alt="Demo Image"></a>
+                                </div>
+                                <div class="content">
+                                    <ul class="content-list">
+                                        <li class="card-btn">
+                                            <a href="wishlist.html"><i class="flaticon heart"></i></a>
+                                            <a href="#" role="button" data-bs-toggle="modal" data-target="#addCartModal"><i class="flaticon shopping-bag"></i></a>
+                                        </li>
+                                        <li class="review">
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="info">
+                                        <h3 class="title">
+                                            <a href="product-details.html">Nourishing Facial Oil</a>
+                                        </h3>
+                                        <span class="price">$13.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mb-30">
+                                <div class="image">
+                                    <a href="product-details.html"><img src="assets/images/product/product-md2.png" alt="Demo Image"></a>
+                                </div>
+                                <div class="content">
+                                    <ul class="content-list">
+                                        <li class="card-btn">
+                                            <a href="wishlist.html"><i class="flaticon heart"></i></a>
+                                            <a href="#" role="button" data-bs-toggle="modal" data-target="#addCartModal"><i class="flaticon shopping-bag"></i></a>
+                                        </li>
+                                        <li class="review">
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="info">
+                                        <h3 class="title">
+                                            <a href="product-details.html">Hair Limon Balsam</a>
+                                        </h3>
+                                        <span class="price">$13.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mb-30">
+                                <div class="image">
+                                    <a href="product-details.html"><img src="assets/images/product/product-md3.png" alt="Demo Image"></a>
+                                </div>
+                                <div class="content">
+                                    <ul class="content-list">
+                                        <li class="card-btn">
+                                            <a href="wishlist.html"><i class="flaticon heart"></i></a>
+                                            <a href="#" role="button" data-bs-toggle="modal" data-target="#addCartModal"><i class="flaticon shopping-bag"></i></a>
+                                        </li>
+                                        <li class="review">
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="info">
+                                        <h3 class="title">
+                                            <a href="product-details.html">Lightening Exfoliating</a>
+                                        </h3>
+                                        <span class="price">$13.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="related-product" class="related-product pb-70">
+            <div class="container">
+                <div class="section-title style-two">
+                    <h2>Services provided by this saloon</h2>
+                </div>
+                <div id="ser" class="product-list">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mb-30">
+                                <div class="image">
+                                    <a href="product-details.html"><img src="assets/images/product/product-md1.png" alt="Demo Image"></a>
+                                </div>
+                                <div class="content">
+                                    <ul class="content-list">
+                                        <li class="card-btn">
+                                            <a href="wishlist.html"><i class="flaticon heart"></i></a>
+                                            <a href="#" role="button" data-bs-toggle="modal" data-target="#addCartModal"><i class="flaticon shopping-bag"></i></a>
+                                        </li>
+                                        <li class="review">
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="info">
+                                        <h3 class="title">
+                                            <a href="product-details.html">Nourishing Facial Oil</a>
+                                        </h3>
+                                        <span class="price">$13.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mb-30">
+                                <div class="image">
+                                    <a href="product-details.html"><img src="assets/images/product/product-md2.png" alt="Demo Image"></a>
+                                </div>
+                                <div class="content">
+                                    <ul class="content-list">
+                                        <li class="card-btn">
+                                            <a href="wishlist.html"><i class="flaticon heart"></i></a>
+                                            <a href="#" role="button" data-bs-toggle="modal" data-target="#addCartModal"><i class="flaticon shopping-bag"></i></a>
+                                        </li>
+                                        <li class="review">
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="info">
+                                        <h3 class="title">
+                                            <a href="product-details.html">Hair Limon Balsam</a>
+                                        </h3>
+                                        <span class="price">$13.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mb-30">
+                                <div class="image">
+                                    <a href="product-details.html"><img src="assets/images/product/product-md3.png" alt="Demo Image"></a>
+                                </div>
+                                <div class="content">
+                                    <ul class="content-list">
+                                        <li class="card-btn">
+                                            <a href="wishlist.html"><i class="flaticon heart"></i></a>
+                                            <a href="#" role="button" data-bs-toggle="modal" data-target="#addCartModal"><i class="flaticon shopping-bag"></i></a>
+                                        </li>
+                                        <li class="review">
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                            <i class="flaticon star"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="info">
+                                        <h3 class="title">
+                                            <a href="product-details.html">Lightening Exfoliating</a>
+                                        </h3>
+                                        <span class="price">$13.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="related-product" class="related-product pb-70">
+            <div class="container">
+                <div class="section-title style-two">
+                    <h2>Find Us on Google Maps</h2>
+                </div>
+
+                <div class="main-contact-map-in">
+                    <div class="mapouter"><div class="gmap_canvas">
+                            <iframe width="100%" height="370px" id="gmap_canvas" src="https://maps.google.com/maps?q=31.636694035778973,74.87413616805217&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br><style>.mapouter{
+                                    position:relative;
+                                    text-align:right;
+                                    height:100%;
+                                    width:100%;
+                                    }</style><a href="https://embedgooglemap.2yu.co/"> html embed google map</a><style>.gmap_canvas {
+                                    overflow:hidden;
+                                    background:none!important;
+                                    height:100%;
+                                    width:100%;
+                                    }</style></div></div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- start newsletter section -->
+        <section id="newsletter" class="newsletter-section style-four ptb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="content mb-30">
+                            <h2>
+                                Subscribe to Our Newsletter
+                            </h2>
+                            <p>
+                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
+                            </p>
+                            <form class="newsletter-form">
+                                <div class="input-group">
+                                    <input class="form-control" placeholder="Enter Your Email Address" type="text" name="EMAIL" required=""
+                                           autocomplete="off">
+                                    <button class="primary-btn" type="submit">
+                                        Subscribe
+                                    </button>
+                                </div>
+                                <div id="validator-newsletter" class="form-result"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end newsletter section -->
+
+        <!-- start footer area -->
+        <footer class="footer-area">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 col-md-6 col-sm-6 col-12">
+                            <div class="footer-widget ptb-100 border-right">
+                                <div class="navbar-brand">
+                                    <a href="index.html">
+                                        <img src="assets/images/logo.png" alt="Logo" />
+                                    </a>
+                                </div>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                <div class="social-link">
+                                    <h3>Follow Us On</h3>
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                        <i class='bx bxl-facebook'></i>
+                                    </a>
+                                    <a href="https://www.twitter.com/" target="_blank">
+                                        <i class='bx bxl-twitter'></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/" target="_blank">
+                                        <i class='bx bxl-linkedin'></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/" target="_blank">
+                                        <i class='bx bxl-instagram'></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                            <div class="footer-widget ptb-100">
+                                <h3>Company</h3>
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="about.html">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html">Blogs</a>
+                                    </li>
+                                    <li>
+                                        <a href="team.html">Team</a>
+                                    </li>
+                                    <li>
+                                        <a href="shop-right-sidebar.html">Shop</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                            <div class="footer-widget ptb-100">
+                                <h3>Services</h3>
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="services-details.html">Spa</a>
+                                    </li>
+                                    <li>
+                                        <a href="services-details.html">Hair Cut</a>
+                                    </li>
+                                    <li>
+                                        <a href="services-details.html">Massage</a>
+                                    </li>
+                                    <li>
+                                        <a href="services-details.html">Makeup</a>
+                                    </li>
+                                    <li>
+                                        <a href="services-details.html">Bridal</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                            <div class="footer-widget ptb-100">
+                                <h3>Quick Links</h3>
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="faq.html">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="appointment.html">Appointment</a>
+                                    </li>
+                                    <li>
+                                        <a href="terms-of-service.html">Terms & Conditions</a>
+                                    </li>
+                                    <li>
+                                        <a href="privacy-policy.html">Privacy Policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="my-account.html">My Account</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copy-right-area border-top">
+                    <div class="copy-right-content">
+                        <span>
+                            Copyright @<script>document.write(new Date().getFullYear())</script> Wofy. Designed By
+                            <a href="https://hibootstrap.com/" target="_blank">
+                                HiBootstrap.com
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end footer area -->
+
+        <!-- start add cart modal -->
+        <div class="modal fade" id="addCartModal" tabindex="-1" role="dialog" aria-labelledby="addCartModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body add-cart-box text-center">
+                        <p>You've just added this product to the cart</p>
+                        <img src="assets/images/product/product-md1.png" id="productImage" width="100" height="100" alt="Demo Image">
+                        <div class="btn-actions">
+                            <a href="cart.html" class="primary-btn">Go to cart</a>
+                            <a href="#" role="button" class="primary-btn" data-dismiss="modal">Continue</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- start add cart modal -->
+
+        <!--=== start go to top area ===-->
+        <div class='go-top'>
+            <i class='bx bx-upvote'></i>
+        </div>
+        <!--=== end go to top area ===-->
+
+        <script>
+            var n = 0;
+            function fill(obj)
+            {
+                var img = obj.src;
+                var id = obj.id;
+                var val = parseInt(id.substring(id.indexOf("_") + 1));
+                var i;
+                if (n === 0)
+                {
+                    i = 1;
+                } else
+                {
+                    i = n + 1;
+                }
+                for (; i <= 5; i++)
+                {
+                    if (i <= val)
+                    {
+                        document.getElementById("rating_" + i).src = "filled_star.png";
+
+                    } else
+                    {
+                        document.getElementById("rating_" + i).src = "empty_star.png";
+                    }
+                }
+
+            }
+            function selected(obj)
+            {
+                var id = obj.id;
+                var val = parseInt(id.substring(id.indexOf("_") + 1));
+                n = val;
+            }
+            function unfill(obj)
+            {
+                var i;
+                if (n === 0)
+                {
+                    i = 1;
+                } else
+                {
+                    i = n + 1;
+                }
+                for (; i <= 5; i++)
+                {
+                    document.getElementById("rating_" + i).src = "empty_star.png";
+                }
+            }
+
+            function addreview()
+            {
+                // Get the current URL
+                const currentUrl = new URL(window.location.href);
+
+                // Extract query parameters
+                const params = new URLSearchParams(currentUrl.search);
+
+                // Access specific parameters
+                const ownerid = params.get('ownerid');
+
+                var thingslike = document.getElementById("thingslike").value;
+                var summery = document.getElementById("summery").value;
+                var review = document.getElementById("review").value;
+
+                var url = "/UserAddReview?thingslike=" + thingslike + "&stars=" + n + "&ownerid=" + ownerid + "&summery=" + summery + "&review=" + review;
+
+                fetch(url)
+                        .then(response => response.text())
+                        .then(ans => renderAsHtml3(ans));
+            }
+            function renderAsHtml3(ans)
+            {
+                if (ans === "success") {
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Review added successfully!",
+                        icon: "success"
+                    });
+                    userShowRatings();
+
+
+                } else if (ans === "fail") {
+                    Swal.fire({
+                        title: "Fail!",
+                        text: "You have already added a review!",
+                        icon: "warning"
+                    });
+                } else {
+                    Swal.fire({
+                        title: "Some server error!",
+                        text: ans,
+                        icon: "error"
+                    });
+                }
+            }
+
+            function userShowRatings()
+            {
+                // Get the current URL
+                const currentUrl = new URL(window.location.href);
+
+                // Extract query parameters
+                const params = new URLSearchParams(currentUrl.search);
+
+                // Access specific parameters
+                const ownerid = params.get('ownerid');
+
+                var url = "/UserShowRatings?ownerid=" + ownerid;
+
+                fetch(url)
+                        .then(response => response.text())
+                        .then(ans => renderAsHtml4(ans));
+
+            }
+
+            function renderAsHtml4(ans) {
+                var mainobj = JSON.parse(ans);
+                var arr = mainobj.ans;
+                var ren = "";
+                for (var i = 0; i < arr.length; i++) {
+                    var st = arr[i];
+
+                    ren += `<div class="col-12">
+                    <div class="card mb-30">
+                        <div class="image">
+                            <img src="myuploads/${st.uphoto || 'assets/images/default-user.jpg'}" alt="User Image">
+                        </div>
+                        <div class="content">
+                            <span class="time">${st.review_date || "Unknown Date"}</span>
+                            <div class="client-info">
+                                <h3 class="title">${st.uname || "Anonymous"}</h3>
+                                <div class="review">`;
+
+                    // Adding filled stars
+                    for (var j = 0; j < (st.rating || 0); j++) {
+                        ren += `<img width="25px;" height="25px;" src="filled_star.png" ></img>`;
+                    }
+
+                    // Adding empty stars (if rating is less than 5)
+                    for (var j = (st.rating || 0); j < 5; j++) {
+                        ren += `<img width="25px;" height="25px;" src="empty_star.png" ></img>`;
+                    }
+
+                    ren += `        </div>
+                            </div>
+                            <p class="text">${st.review || "No comment provided."}</p>
+                        </div>
+                    </div>
+                </div>`;
+                }
+
+                console.log(ren)
+
+                document.querySelector(".all-reviews .row").innerHTML = ren;
+            }
+
+
+        </script>
+
+        <!--=== link of JS files ===-->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/smoothscroll.js"></script>
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="assets/js/jquery.mixitup.min.js"></script>
+        <script src="assets/js/range-slider.min.js"></script>
+        <script src="assets/js/meanmenu.min.js"></script>
+        <script src="assets/js/form-validator.min.js"></script>
+        <script src="assets/js/contact-form-script.js"></script>
+        <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
+
+    <!-- Mirrored from templates.hibootstrap.com/wofy/default/product-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Jan 2025 08:46:44 GMT -->
+</html>

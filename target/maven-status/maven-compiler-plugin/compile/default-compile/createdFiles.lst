@@ -1,0 +1,10 @@
+Salonique/SaloonManagement/Controllers/UserRestController.class
+Salonique/SaloonManagement/Controllers/UserController.class
+Salonique/SaloonManagement/Connection/Database.class
+Salonique/SaloonManagement/Controllers/AdminRestController.class
+Salonique/SaloonManagement/Controllers/OwnerController.class
+Salonique/SaloonManagement/Controllers/AdminController.class
+Salonique/SaloonManagement/Connection/RDBMS_TO_JSON.class
+Salonique/SaloonManagement/Controllers/OwnerRestController.class
+Salonique/SaloonManagement/Connection/FileUploader.class
+Salonique/SaloonManagement/SaloonManagementApplication.class

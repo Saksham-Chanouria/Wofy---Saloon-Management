@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'flaticon';
+  src:  url('../fonts/flaticon.eot');
+  src:  url('../fonts/flaticon.eot#iefix') format('embedded-opentype'),
+    url('../fonts/flaticon.ttf') format('truetype'),
+    url('../fonts/flaticon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'flaticon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  font-size: 20px;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.alarm-clock:before {
+  content: "\e900";
+}
+.cosmetics:before {
+  content: "\e901";
+}
+.delete:before {
+  content: "\e902";
+}
+.heart:before {
+  content: "\e903";
+}
+.location-pin:before {
+  content: "\e904";
+}
+.phone:before {
+  content: "\e905";
+}
+.point:before {
+  content: "\e906";
+}
+.scissors:before {
+  content: "\e907";
+}
+.shopping-bag:before {
+  content: "\e908";
+}
+.spa:before {
+  content: "\e909";
+}
+.star:before {
+  content: "\e90a";
+}
