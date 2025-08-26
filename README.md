@@ -30,8 +30,8 @@ Admins have full control over the platform.
 ---
 
 ## 🛠 Tech Stack
-- **Frontend:** Java Swing (or other UI framework you’re using)
-- **Backend:** Java + JDBC
+- **Frontend:** HTML, CSS, Java Script, BootStrap
+- **Backend:** Java + SpringBoot
 - **Database:** MySQL
 - **Other Libraries:** Unirest for API calls (if applicable)
 
