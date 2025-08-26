@@ -30,10 +30,10 @@ Admins have full control over the platform.
 ---
 
 ## 🛠 Tech Stack
-- **Frontend:** HTML, CSS, Java Script, BootStrap
-- **Backend:** Java + SpringBoot
+- **Frontend:** HTML5, CSS3, Java Script(ES6), BootStrap 5
+- **Backend:** SpringBoot 3 (Spring MVC, REST), Spring Data JPA, Hibernate
 - **Database:** MySQL
-- **Other Libraries:** Unirest for API calls (if applicable)
+- **Build/Tools:** Maven, Git/GitHub, Postman, MySQL Workbench, Embedded Tomcat
 
 ---
 
